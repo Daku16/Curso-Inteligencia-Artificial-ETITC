@@ -10,9 +10,7 @@ from sklearn.pipeline import make_pipeline
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score, confusion_matrix
 
-# ==========================================
 # CONFIGURACIÓN DE PÁGINA Y ESTILOS UI/UX
-# ==========================================
 st.set_page_config(
     page_title="Dashboard IA - Monitoreo de Inventario",
     page_icon="🏍️",
@@ -45,9 +43,8 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-# ==========================================
 # BARRA LATERAL (SIDEBAR)
-# ==========================================
+
 with st.sidebar:
     st.image("https://img.icons8.com/color/96/motorcycle.png", width=70)
     st.title("Panel de Control IA")
@@ -58,15 +55,13 @@ with st.sidebar:
     st.markdown("• Erick Santiago Garcia Sanchez\n• Oscar David Gutierrez")
     st.markdown("---")
 
-# ==========================================
 # ENCABEZADO PRINCIPAL
-# ==========================================
+
 st.title("🏍️ Sistema Inteligente de Monitoreo y Logística")
 st.markdown("Plataforma avanzada para la gestión automatizada de inventario de repuestos para motocicletas.")
 
-# ==========================================
 # NAVEGACIÓN POR PESTAÑAS (MODULAR)
-# ==========================================
+
 tab_resumen, tab_s2, tab_s3, tab_s4, tab_s5 = st.tabs([
     "📊 Resumen Ejecutivo",
     "🤖 Semana 2: Línea Base",
@@ -75,9 +70,8 @@ tab_resumen, tab_s2, tab_s3, tab_s4, tab_s5 = st.tabs([
     "⚡ Semana 5: Sistema Híbrido"
 ])
 
-# ==========================================
 # 1. RESUMEN EJECUTIVO
-# ==========================================
+
 with tab_resumen:
     st.header("Arquitectura Semestral del Proyecto")
     col1, col2, col3, col4 = st.columns(4)
@@ -95,9 +89,8 @@ with tab_resumen:
             '<div class="metric-card"><h3>Semana 5</h3><p>150 Entradas</p><small>Base de Conocimiento</small></div>',
             unsafe_allow_html=True)
 
-# ==========================================
 # 2. SEMANA 2: LÍNEA BASE (MACHINE LEARNING)
-# ==========================================
+
 with tab_s2:
     st.header("Semana 2: Fundamentos de IA y Línea Base")
     st.markdown("Modelo de clasificación supervisada con **Regresión Logística** y estandarización.")
@@ -130,9 +123,9 @@ with tab_s2:
         else:
             st.info("👈 Haga clic en 'Entrenar Modelo Base' para procesar los datos.")
 
-# ==========================================
+
 # 3. SEMANA 3: TAXONOMÍA DE IA
-# ==========================================
+
 with tab_s3:
     st.header("Semana 3: Taxonomía de Inteligencia Artificial")
     caso_usuario = st.text_input("Ingrese un caso o solicitud de taller:",
@@ -149,9 +142,8 @@ with tab_s3:
             cat = "Sistemas Expertos"
         st.info(f"**Categoría Principal Detectada:** `{cat}`")
 
-# ==========================================
 # 4. SEMANA 4: DASHBOARD DE LOGÍSTICA A* DINÁMICO
-# ==========================================
+
 with tab_s4:
     st.header("Semana 4: Dashboard Interactivo de Logística (Búsqueda A*)")
     st.markdown(
@@ -260,9 +252,8 @@ with tab_s4:
             st.success(
                 f"✅ **Ruta calculada con éxito!** Costo total $g(n)$: `{costo_total}` | Nodos explorados: `{nodos}`")
 
-# ==========================================
 # 5. SEMANA 5: SISTEMA HÍBRIDO AVANZADO
-# ==========================================
+
 with tab_s5:
     st.header("Semana 5: Sistema Híbrido Explicable")
     ruta_bc = Path("data/base_conocimiento.txt")
@@ -295,9 +286,9 @@ with tab_s5:
         st.warning(f"**2. Recuperación de Información (TF-IDF):**\n`{mejor_doc}`")
         st.success("**3. Clasificación Supervisada (Naive Bayes):**\n`RIESGO_REORDEN`")
 
-# ==========================================
+
 # PIE DE PÁGINA
-# ==========================================
+
 st.markdown("---")
 st.markdown(
     "<div style='text-align: center; color: #94a3b8; font-size: 0.9rem;'>Universidad / Institución | Ingeniería de Sistemas S10A | Repositorio Oficial</div>",
